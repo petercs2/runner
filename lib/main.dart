@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:point_run/db_point/db_point.dart';
+import 'package:point_run/pages/point_end/point_end_binding.dart';
+import 'package:point_run/pages/point_end/point_end_view.dart';
 import 'package:point_run/pages/point_error/point_error_binding.dart';
 import 'package:point_run/pages/point_error/point_error_view.dart';
 import 'package:point_run/pages/point_first/point_first_binding.dart';
 import 'package:point_run/pages/point_first/point_first_view.dart';
 import 'package:point_run/pages/point_second/point_second_binding.dart';
 import 'package:point_run/pages/point_second/point_second_view.dart';
+import 'package:point_run/pages/point_third/pie_config.dart';
 import 'package:point_run/pages/point_third/point_third_binding.dart';
 import 'package:point_run/pages/point_third/point_third_view.dart';
 
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Points,
-      initialRoute: '/pointFirst',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -84,8 +87,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Points = [
+  GetPage(name: '/', page: () => const PointEndView(), binding: PointEndBinding()),
   GetPage(name: '/pointFirst', page: () => const PointFirstPage(), binding: PointFirstBinding()),
   GetPage(name: '/pointSecond', page: () => const PointSecondPage(), binding: PointSecondBinding()),
   GetPage(name: '/pointThird', page: () => PointThirdPage(), binding: PointThirdBinding()),
+  GetPage(name: '/pointCel', page: () => const PieConfig()),
   GetPage(name: '/pointError', page: () => const PointErrorView(), binding: PointErrorBinding()),
 ];

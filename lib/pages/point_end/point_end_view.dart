@@ -11,8 +11,8 @@ class PointEndView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.rath.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.considine.value
+              ? const CircularProgressIndicator(color: Colors.green)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class PointEndView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.buql();
+              controller.inxbe();
             },
             icon: const Icon(
               Icons.restart_alt,
